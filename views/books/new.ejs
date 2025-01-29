@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>New Book</title>
+</head>
+
+<body>
+	<%- include('../partials/_navbar.ejs') %>
+		<h1>Add a New Book</h1>
+		<!-- views/applications/new.ejs -->
+
+		<form action="/users/<%= user._id %>/books" method="POST">
+			<label for="title">Title:</label>
+			<input type="text" name="title" id="title" />
+
+			<label for="author">Author:</label>
+			<input type="text" name="author" id="author" />
+			
+			<label for="genre">Genre:</label>
+			<input type="text" name="genre" id="genre" />
+
+            <label for="publishedYear">Published Year:</label>
+			<input type="text" name="publishedYear" id="publishedYear" />
+
+            <label for="description">Book Description:</label>
+			<textarea name="description" id="description" maxlength="800"></textarea>
+             <!--made notes length 800 characters max  -->
+
+            <label for="notes">Notes:</label>
+			<textarea name="notes" id="notes" maxlength="100"></textarea>
+             <!--made notes length 100 characters max  -->
+
+			<label for="stars">Stars:</label>
+			<select id="stars" name="stars">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select>
+			<button type="submit">Create Book</button>
+		</form>
+
+</body>
+
+</html>

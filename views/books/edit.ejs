@@ -1,0 +1,82 @@
+<!-- views/applications/edit.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editing <%= book.title %></title>
+</head>
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+  <h1>Edit <%= book.title %> by <%= book.author %></h1>
+  <form
+    action="/users/<%= user._id %>/books/<%= book._id %>?_method=PUT"
+    method="POST"
+  >
+    <label for="title">Title:</label>
+    <input
+      type="text"
+      name="title"
+      id="title"
+      value="<%= book.title %>"
+    >
+    <label for="author">Author:</label>
+    <input type="text" name="author" id="author" value="<%= book.author %>">
+
+    <label for="publishedYear">Published Year:</label>
+    <input type="number" name="publishedYear" id="publishedYear" value="<%= book.publishedYear %>">
+    
+    
+    <label for="genre">Genre:</label>
+    <input
+      type="text"
+      name="genre"
+      id="genre"
+      value="<%= book.genre %>"
+    >
+    <label for="description">Description:</label>
+    <textarea name="description" id="description"><%= book.description %></textarea>
+
+    <label for="notes">Notes:</label>
+    <textarea name="notes" id="notes" maxlength="100"><%= book.notes %></textarea>
+    
+
+    <label for="stars">Stars:</label>
+    <select id="stars" name="stars">
+      <option
+        value="1"
+        <%= book.status === "1" ? "selected" : "" %>
+      >
+        1
+      </option>
+      <option
+        value="2"
+        <%= book.status === "2" ? "selected" : "" %>
+	
+      >
+        2
+      </option>
+      <option
+        value="3"
+        <%= book.status === "3" ? "selected" : "" %>
+      >
+        3
+      </option>
+      <option
+        value="4"
+        <%= book.status === "4" ? "selected" : "" %>
+      >
+        4
+      </option>
+      <option
+        value="5"
+        <%= book.status === "5" ? "selected" : "" %>
+      >
+        5
+      </option>
+    </select>
+    <button type="submit">Update Book</button>
+  </form>
+</body>
+</html>

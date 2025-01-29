@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Book Details</title>
+</head>
+<body>
+	<%- include('../partials/_navbar') %>
+	<% if (book) { %>
+		<h1><%= book.title %> by <%= book.author %></h1>
+		<% if (book.notes) { %>
+			<p>Notes: <%= book.notes %></p> 
+		<% } %>
+		<% if (book.description) { %>
+			<p>Description: <%= book.description %></p> 
+		<% } %>
+
+        <p>Published Year: <%= book.publishedYear %></p>
+
+		<p>Stars: <%= book.stars %></p>
+        		
+		<a href="/users/<%= user._id %>/books/<%= book._id %>/edit">Edit this Book</a>
+
+		<form action="/users/<%= user._id %>/books/<%= book._id %>?_method=DELETE" method="POST">
+			<button type="Submit">Delete</button>
+		</form>
+	<% } else { %>
+		<h1>Book not found</h1>
+	<% } %>
+</body>
+</html>
