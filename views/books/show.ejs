@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Book Details</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/show.css" />
+    <title>Book Details</title>
 </head>
 <body>
-	<%- include('../partials/_navbar') %>
-	<% if (book) { %>
-		<h1><%= book.title %> by <%= book.author %></h1>
-		<% if (book.notes) { %>
-			<p>Notes: <%= book.notes %></p> 
-		<% } %>
-		<% if (book.description) { %>
-			<p>Description: <%= book.description %></p> 
-		<% } %>
-
-        <p>Published Year: <%= book.publishedYear %></p>
-
-		<p>Stars: <%= book.stars %></p>
-        		
-		<a href="/users/<%= user._id %>/books/<%= book._id %>/edit">Edit this Book</a>
-
-		<form action="/users/<%= user._id %>/books/<%= book._id %>?_method=DELETE" method="POST">
-			<button type="Submit">Delete</button>
-		</form>
-	<% } else { %>
-		<h1>Book not found</h1>
-	<% } %>
+    <%- include('../partials/_navbar') %>
+    <div class="show-body">
+        <div class="show-header">
+            <h1><%= book.title %> by <%= book.author %></h1>
+            <div class="show-sidebar">
+                <p>Published Year: <%= book.publishedYear %></p>
+            </div>
+        </div>
+        <div class="show-notes-container">
+            <% if (book) { %>
+                <% if (book.notes) { %>
+                    <div class="show-notes">
+                        <h2>Notes:</h2>
+                        <p><%= book.notes %></p> 
+                    </div>
+                <% } %>
+                <% if (book.description) { %>
+                    <p>Description: <%= book.description %></p> 
+                <% } %>
+                <p>Stars: <%= book.stars %></p>
+            <% } else { %>
+                <h1>Book not found</h1>
+            <% } %>
+        </div>
+        <div class="show-actions">
+            <a href="/users/<%= user._id %>/books/<%= book._id %>/edit">Edit this Book</a>
+            <form action="/users/<%= user._id %>/books/<%= book._id %>?_method=DELETE" method="POST">
+                <button type="Submit">Delete</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

@@ -5,10 +5,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css" />
   <title>Editing <%= book.title %></title>
 </head>
 <body>
-  <%- include('../partials/_navbar.ejs') %>
+      <%- include('../partials/_navbar.ejs') %>
+      <div class="edit-body">
   <h1>Edit <%= book.title %> by <%= book.author %></h1>
   <form
     action="/users/<%= user._id %>/books/<%= book._id %>?_method=PUT"
@@ -78,5 +80,8 @@
     </select>
     <button type="submit">Update Book</button>
   </form>
+  </body>
+
+</div>
 </body>
 </html>
