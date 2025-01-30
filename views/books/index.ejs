@@ -13,12 +13,13 @@
     <div class="all-apps-body">
         <div class="all-apps-header">
 		<h1>Book Library</h1>
-		<a href="/users/<%= user._id %>/books/new">Add a Book</a>
+		<a href="/users/<%= user._id %>/books/new" class="add-app-link">Add a Book</a>
     </div>
 		<ul>
 			<% books.forEach(book=> { %>
 				<li>
-					<a href="/users/<%= user._id %>/books/<%= book._id %>">
+					<a class="bcck-link" href="/users/<%= user._id %>/books/<%= book._id %>">
+                        
                         <%= book.title %> by <%= book.author %>
 					</a>
 				</li>
