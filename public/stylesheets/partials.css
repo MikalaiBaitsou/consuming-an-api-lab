@@ -10,7 +10,7 @@
   }
   
   #nav-header {
-    color: #ce4866;
+    color: rgb(0, 0, 0);
     size: 1em !important;
     margin: 0;
   }
@@ -18,11 +18,11 @@
   .authlink {
     text-decoration: none;
     margin: 0 15px;
-    color: #4b598e;
+    color: rgb(8, 189, 245);
     font-weight: bold;
   }
   
   .authlink:hover {
-    color: white;
+    color: red;
   }
   
