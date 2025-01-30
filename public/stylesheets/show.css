@@ -8,7 +8,11 @@ body {
     flex-direction: column;
     height: 100vh;
     width: 100vw;
-    background-color: #2898b4;
+    background-image: url('/images/sign-in.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
   }
 
 
@@ -20,7 +24,7 @@ body {
   justify-content: flex-start;
   width: 100%;
   height: 100%;
-  padding: 20px; /* Added padding for better spacing */
+  padding: 10px; /* Added padding for better spacing */
   box-sizing: border-box; /* Ensure padding doesn't affect the total width/height */
 }
 
@@ -31,14 +35,15 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-bottom: 20px; /* Space below header */
+    margin-bottom: 10px; /* Space below header */
     text-align: center;
   }
   
   .show-header > h1 {
     color: #1814da;
     font-size: 3.4em;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    
   }
   
   .show-sidebar {
@@ -56,6 +61,7 @@ body {
     border-radius: 0;
     padding: 0;
     margin-bottom: 20px; /* Space between notes and description */
+    text-align: center;
   }
   
   .show-actions {
@@ -77,7 +83,7 @@ button, .show-actions > a {
 button {
   padding: 10px 12px;
   background-color: #9e5d68;
-  color: lightblack;
+  color: white;
   border-radius: 30px;
   border: none;
   font-size: 1.1em;
@@ -95,7 +101,7 @@ button:hover {
 
 .show-actions > a {
   background-color: #532e83;
-  color: orange;
+  color: white;
   text-decoration: none;
   font-size: 1.1em;
   padding: 8px 10px;
@@ -107,29 +113,72 @@ button:hover {
 }
 
 .show-actions > a:hover {
-  background-color: #11245a;
+  background-color: #15567c;
 }
 
 p {
-  color: black;
+  color: rgb(10, 33, 243);
   font-weight: bold;
   font-size: 1.4em;
   margin: 10px 30px;
   text-align: center;
+  border-radius: 50%;
+    
 }
+
+
+
+
+.book-stars {
+    position: relative;
+    top: -160px;
+    margin-top: 0px; /* Space between description and stars */
+    text-align: center; /* Center the text */
+    color: #1c2e5b; /* Match the color with the description for consistency */
+    font-weight: bold; /* Keep it bold like the description */
+  }
+
+
+
+
+
 
 .show-notes-container {
   width: 100%;
-  margin: 1px 0;
+  margin: 10px 0;
 }
 
-.show-notes-container > a {
-  text-decoration: none;
+/* .show-notes-container > a { */
+  /* text-decoration: none;
   font-weight: bold;
   color: transparent;
   font-size: 1.4em;
-  margin: 10px;
-}
+  margin: 10px; */
+  .show-notes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the child elements horizontally */
+    justify-content: center; /* Center the child elements vertically */
+    width: 100%;
+    height: 100%; /* Ensure it takes full height to center vertically */
+    margin: 1px 0;
+  }
+  
+  .show-notes-container > p:nth-child(2) { /* Assuming the description is the second p element */
+    display: inline-block;
+    max-width: 40%; /* Adjust this to control how wide the box can be */
+    padding: 20px; /* Padding around the text */
+    /* background-color: rgba(255, 255, 255, 0.7);  */
+    border-radius: 10px; /* Rounded corners but not circular */
+    text-align: center; /* Center text within the box */
+    margin: 190px 0; /* Space above and below the box */
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);  */
+    color: #ff5f02; /* Text color */
+    font-weight: bold;
+    overflow-wrap: break-word; /* Ensure long words wrap */
+    margin-top: -40px;
+  }
+/* } */
 
 .show-notes-container > a:hover {
   color: #4b598e;
@@ -137,20 +186,20 @@ p {
 
 .show-notes {
   background-color: transparent;
-  width: 85%;
+  width: 93%;
   border-radius: 30px;
   padding: 10px 40px 20px 40px;
   margin: 1px 10px;
 }
 
 h2 {
-  margin: 0 10px;
-  color: greenyellow;
+  margin: 0 20px;
+  color: lightblack;
 }
 
 .show-notes > p {
   font-weight: normal;
-  color: beige;
-  text-align: left;
+  color: rgb(15, 105, 223);
+  text-align: center;
   font-size: 1.2em;
 }

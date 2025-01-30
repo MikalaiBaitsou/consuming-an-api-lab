@@ -18,11 +18,10 @@
   .authlink {
     text-decoration: none;
     margin: 0 15px;
-    color: rgb(8, 189, 245);
+    color: rgb(245, 182, 8);
     font-weight: bold;
   }
   
   .authlink:hover {
     color: red;
   }
-  

@@ -9,9 +9,11 @@
   <title>Editing <%= book.title %></title>
 </head>
 <body>
-      <%- include('../partials/_navbar.ejs') %>
+      
       <div class="edit-body">
-  <h1>Edit <%= book.title %> by <%= book.author %></h1>
+        
+  
+  <h1 class="edit-title">Editing <%= book.title %> by <%= book.author %></h1>
   <form
     action="/users/<%= user._id %>/books/<%= book._id %>?_method=PUT"
     method="POST"
@@ -78,10 +80,15 @@
         5
       </option>
     </select>
-    <button type="submit">Update Book</button>
+    <!-- <button type="submit">Update Book</button> -->
+    <button type="submit" class="update-book-btn">Update Book</button>
   </form>
   </body>
 
 </div>
+<div class="footer-navbar">
+    <%- include('../partials/_navbar.ejs') %>
+  </div>
+
 </body>
 </html>

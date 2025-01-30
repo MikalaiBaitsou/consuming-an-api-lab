@@ -24,14 +24,14 @@ body {
     background-repeat: no-repeat;
     min-height: 100vh;
     width: 100vw;
-    color: white;
+    color: lightblack;
   }
   
   .main-header {
     font-weight: bold;
-    color: white;
+    color: rgb(28, 54, 197);
     font-size: 5.6em;
-    margin: -160px 20px 0 20px;
+    margin: -140px 20px 0 20px;
   }
   
   .subheader {
@@ -47,6 +47,25 @@ body {
     height: 100%;
   }
   
+
+
+  .auth-links-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* margin: 0 auto; */
+    padding: 20px 0;
+    z-index: 10;
+    min-height: 60px;
+  }
+
+
+
   .auth-links {
     display: flex;
     flex-direction: column;
@@ -58,18 +77,24 @@ body {
   
   .signup-link,
   .signin-link {
+    display: inline-block;    
     text-decoration: none;
     font-size: 1.5em;
-    padding: 8px 0;
+    padding: 8px 15px;
     border-radius: 25px;
     width: 10em;
     text-align: center;
+    margin: 20px 10px;
+    height: auto;
+    line-height: normal;
+    vertical-align: middle; /* Additional alignment for inline-block */
+    
   }
   
   .signup-link {
-    background-color: #ce4866;
+    background-color: #4898ce;
     color: white;
-    margin: 0 0 20px 0;
+    margin: 0 30px 20px 0px;
   }
   
   .signup-link:hover {
@@ -77,13 +102,14 @@ body {
   }
   
   .signin-link {
-    background-color: #f6e7e7;
+    background-color: #0bbae6;
     color: #1c2e5b;
-    margin: 20px 0 0 0;
+    margin: 0px 0 20px 0;
+    width: 10em;
   }
   
   .signin-link:hover {
-    background-color: #1083e2;
+    background-color: #53ffe2;
   }
   
   .signin-container,
@@ -279,14 +305,50 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
+    top: 20%;
+    left: 50%;
+    transform: translateY(-7%)
+    /* transform: translateX(-50%); */
+  }
+
+  .edit-title {
+    text-align: center;
+    margin-bottom: 60px; /* Space below the title */
   }
 
 
-  .background-image {
+  /* .background-image {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh; /* Sets the body height to fill the viewport */
-    margin: 0; /* Removes default body margin */     
-    opacity: 0.5; /* Adds transparency if needed */
+    /* margin: 0; Removes default body margin      */
+    /* opacity: 0.5; Adds transparency if needed */
+  /* } */ */
+
+  .update-book-btn {
+    padding: 12px;
+    background-color: #ce4866;
+    color: white;
+    border-radius: 40px;
+    border: none;
+    margin: 15px 0;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
   }
+  
+  .update-book-btn:hover {
+    background-color: #092572;
+   }
+
+
+   .footer-navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f8f9fa; /* Or any color you want for your footer */
+    padding: 10px 0;
+    
+  }
+  
