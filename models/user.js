@@ -10,13 +10,13 @@ const bookSchema = mongoose.Schema({
     required: true
   }, 
   notes: String,
-//   postingLink: String,
-  description: String, // Add this field if it doesn't exist
+
+  description: String, 
   stars: Number,
   publishedYear: Number,
   genre: {
     type: String,
-    // enums are the options that you have as the value of status
+    
     enum: [
         'Fiction',
         'Non-Fiction',
@@ -53,8 +53,7 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  // 1 to many relationship using embedding
-  // 1 user has many applications, application belongs to a User
+ 
   books: [bookSchema]
 });
 
