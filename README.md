@@ -33,6 +33,9 @@ A fully functional CRUD Server.
 
 ![Screenshot 2025-01-31 101411](https://github.com/user-attachments/assets/59011b76-0548-4e40-b60e-742b4ddda385)
 
+![image](https://github.com/user-attachments/assets/911fb823-41b1-481d-b73a-d320a70abd5f)
+
+
 
 ## :desktop_computer: Technologies Used
 
