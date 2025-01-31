@@ -52,6 +52,6 @@ A fully functional CRUD Server.
 
 ## :loud_sound: Attributions
 
-- All books descriptions are taken from (https://thegreatestbooks.org/)
+- All books descriptions are taken from https://thegreatestbooks.org/
 
 
