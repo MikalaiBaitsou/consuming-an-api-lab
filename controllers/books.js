@@ -4,7 +4,7 @@ const router = express.Router();
 const UserModel = require("../models/user");
 
 router.get("/", async function (req, res) {
-  console.log(req.session, " req.session in index of books");
+  
   try {
     const currentUser = await UserModel.findById(req.session.user._id);
 
@@ -13,7 +13,7 @@ router.get("/", async function (req, res) {
     });
 
   } catch (err) {
-    console.log(err);
+    
     res.send("Error Rendering all books check terminal");
   }
 });
@@ -37,7 +37,7 @@ router.put('/:bookId', async function(req, res){
 
 
 	} catch(err){
-		console.log(err)
+		
 		res.send("error updating book, check terminal")
 	}
 })
@@ -56,7 +56,7 @@ router.get('/:bookId/edit', async function(req, res){
 	
 
 	} catch(err){
-		console.log(err)
+		
 		res.send('Error getting edit form, check terminal')
 	}
 })
@@ -74,7 +74,7 @@ router.delete('/:bookId', async function(req, res){
 		res.redirect(`/users/${currentUser._id}/books`)
 
 	} catch(err){
-		console.log(err)
+		
 		res.send('Error deleting book, check terminal!')
 	}
 })
@@ -89,19 +89,19 @@ router.get('/:bookId', async function(req, res){
 		
 		const book = currentUser.books.id(req.params.bookId)
 		
-        console.log(book)
+        
 		res.render('books/show.ejs', {
 			book: book
 		})
 
 	} catch(err){
-		console.log(err)
+		
 		res.send("error and show page check your terminal!")
 	}
 })
 
 router.post("/", async function (req, res) {
-    console.log(req.body)
+    
   try {
     
     const currentUser = await UserModel.findById(req.session.user._id);
@@ -109,11 +109,11 @@ router.post("/", async function (req, res) {
     currentUser.books.push(req.body);
    
     await currentUser.save();
-    console.log(currentUser, " <- currentUser");
+    
    
     res.redirect(`/users/${currentUser._id}/books`);
   } catch (err) {
-    console.log(err);
+    
     res.send("Error check the terminal to debug");
   }
 });

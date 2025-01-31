@@ -20,7 +20,7 @@ const path = require('path');
 mongoose.connect(process.env.MONGODB_URI);
 
 mongoose.connection.on("connected", () => {
-  console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
+  
 });
 
 
@@ -45,7 +45,7 @@ app.use(passUserToView);
 
 
 app.get("/", (req, res) => {
-  console.log(req.session, " <- req.session");
+  
 
   
   if (req.session.user) {
@@ -68,5 +68,5 @@ app.use("/users/:userId/books", bookCtrl);
 
 
 app.listen(port, () => {
-  console.log(`The express app is ready on port ${port}!`);
+  
 });
